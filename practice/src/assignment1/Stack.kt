@@ -2,21 +2,20 @@ package assignment1
 
 class Stack<T> {
 
-    private var stack = ArrayList<T>()
+    private val stack = ArrayList<T>()
 
     fun push(element: T) {
         stack.add(element)
     }
+
     fun pop(): T? {
-        if(stack.isEmpty()) {
+        if (stack.isEmpty()) {
             return null
         }
-        return stack.removeAt(stack.size - 1)
+        return stack.removeLast()
     }
-    fun size(): Int {
-        return stack.size;
-    }
-    fun find(element: T): Boolean {
-        return stack.contains(element)
-    }
+
+    fun size() = stack.size
+    
+    fun find(element: T) = stack.contains(element)
 }

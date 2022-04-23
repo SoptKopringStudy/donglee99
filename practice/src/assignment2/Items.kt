@@ -2,23 +2,11 @@ package assignment2
 
 class Items {
 
-    var items: List<Item>
+    private val items: List<Item>
 
-    fun countTotalPrice(): Int {
-        var sum: Int = 0
-        for (i in 0..items.size - 1) {
-            sum += items.get(i).price
-        }
-        return sum
-    }
+    fun countTotalPrice(): Int =  items.sumBy { item -> item.price }
 
-    fun getItem(index: Int): Item {
-        return items.get(index)
-    }
-
-    fun getSize(): Int {
-        return items.size
-    }
+    fun getItems(): List<Item> = this.items
 
     constructor(items: List<Item>) {
         this.items = items

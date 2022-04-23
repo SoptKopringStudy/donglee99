@@ -6,21 +6,20 @@ class Printer {
         println(item.name + BLANK + item.price + WON)
     }
 
-    private fun totalPricePrint(totalPrice: Int) {
+    private fun printTotalPrice(totalPrice: Int) {
         println(TOTAL + BLANK + totalPrice + WON)
     }
 
     private fun printItems(items: Items) {
-        for (i in 0..items.getSize() - 1) {
-            printNameAndPrice(items.getItem(i))
-        }
+        items.getItems()
+                .forEach{ item -> printNameAndPrice(item)}
     }
 
-    fun view(items: Items) {
+    fun print(items: Items) {
         println(OUTPUT)
         printItems(items)
         println(LINE)
-        totalPricePrint(items.countTotalPrice())
+        printTotalPrice(items.countTotalPrice())
     }
 
     companion object {
